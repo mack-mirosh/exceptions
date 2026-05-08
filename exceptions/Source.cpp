@@ -23,6 +23,17 @@ int main() {
         cout << "Offset: ";
         cin >> offset;
 
+        try {
+            char result = character(start, offset);
+            cout << "Result: " << result << endl;
+        }
+        catch (invalidCharacterException) {
+            cout << "Error: Invalid Character Exception" << endl;
+        }
+        catch (invalidRangeException) {
+            cout << "Error: Invalid Range Exception" << endl;
+        }
+
         cout << "Test another? (y/n): ";
         cin >> choice;
     }
