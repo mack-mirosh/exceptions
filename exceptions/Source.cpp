@@ -31,5 +31,22 @@ int main() {
 }
 
 char character(char start, int offset) {
-    
+    if (!isalpha(start)) {
+        throw invalidCharacterException();
+    }
+
+    char target = start + offset;
+
+    if (!isalpha(target)) {
+        throw invalidRangeException();
+    }
+
+    if (isupper(start) && islower(target)) {
+        throw invalidRangeException();
+    }
+    if (islower(start) && isupper(target)) {
+        throw invalidRangeException();
+    }
+
+    return target;
 }
