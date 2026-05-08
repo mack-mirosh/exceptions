@@ -15,7 +15,18 @@ char character(char start, int offset);
 int main() {
     char start;
     int offset;
-    
+    char choice = 'y';
+
+    while (choice == 'y' || choice == 'Y') {
+        cout << "Start: ";
+        cin >> start;
+        cout << "Offset: ";
+        cin >> offset;
+
+        cout << "Test another? (y/n): ";
+        cin >> choice;
+    }
+
     return 0;
 }
 
